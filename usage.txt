@@ -1,45 +1,45 @@
-gimp 2.6.11でホワイトボードの写真をきれいにする手順
+gimp 2.6.11�Ńz���C�g�{�[�h�̎ʐ^�����ꂢ�ɂ���菇
 2016/9/11
-上田晴康 MAE03130@nifty.com
+��c���N MAE03130@nifty.com
 
-・インストール
-  ・gimp をインストールする
+�E�C���X�g�[��
+  �Egimp ���C���X�g�[������
 
-  ・必要なら、HOME環境変数を d:\home など適当な場所に設定する
-    Windowsのコンピューターのプロパティ
-    システムの詳細設定
-    詳細設定タブの「環境変数」ボタン
-    ユーザ環境変数 で設定
-    なお設定しないと HOME=C:\Users\ユーザー名 になる
+  �E�K�v�Ȃ�AHOME���ϐ��� d:\home �ȂǓK���ȏꏊ�ɐݒ肷��
+    Windows�̃R���s���[�^�[�̃v���p�e�B
+    �V�X�e���̏ڍאݒ�
+    �ڍאݒ�^�u�́u���ϐ��v�{�^��
+    ���[�U���ϐ� �Őݒ�
+    �Ȃ��ݒ肵�Ȃ��� HOME=C:\Users\���[�U�[�� �ɂȂ�
 
-  ・gimp を一度実行する
-    一度gimpを実行すると $HOME\.gimp-2.Xができる
+  �Egimp ����x���s����
+    ��xgimp�����s����� $HOME\.gimp-2.X���ł���
 
-  ・whiteboard.scmをコピーする
-    コピー先は、 $HOME\.gimp-2.X\scripts\whiteboard.scm 
-    上記HOME設定では、d:\home\.gimp-2.X\scripts\whiteboard.scm にコピーする
-    HOMEを設定しないときは、C:\Users\ユーザー名\.gimp-2.X\scripts\whiteboard.scm にコピーする
+  �Ewhiteboard.scm���R�s�[����
+    �R�s�[��́A $HOME\.gimp-2.X\scripts\whiteboard.scm 
+    ��LHOME�ݒ�ł́Ad:\home\.gimp-2.X\scripts\whiteboard.scm �ɃR�s�[����
+    HOME��ݒ肵�Ȃ��Ƃ��́AC:\Users\���[�U�[��\.gimp-2.X\scripts\whiteboard.scm �ɃR�s�[����
 
-・使い方
-  ・画像を読む
-  ・Scrpt-Fu>Whiteboard Sharpner 
-   （しばらく時間がかかる。途中ガウシアンぼかし、アンシャープマスクなどの実行経過が見える）
-  ・色＞明るさ-コントラストで、
-    コントラスト127(60～100 背景が荒れない程度にコントラストを極大）
-    明るさを、背景を白くつぶす程度に小さく(-109)
-  ・遠近法（上から4段目台形）: 逆変換、グリッド線を大体輪郭に合わせて、Enterで実行
-  ・切り抜き（上から3段目右から2番目のカッター）、Enterで実行
-  ・ExportAs で書き出して出来上がり
+�E�g����
+  �E�摜��ǂ�
+  �EScrpt-Fu>Whiteboard Sharpner 
+   �i���΂炭���Ԃ�������B�r���K�E�V�A���ڂ����A�A���V���[�v�}�X�N�Ȃǂ̎��s�o�߂�������j
+  �E�F�����邳-�R���g���X�g�ŁA
+    �R���g���X�g127(60�`100 �w�i���r��Ȃ����x�ɃR���g���X�g���ɑ�j
+    ���邳���A�w�i�𔒂��Ԃ����x�ɏ�����(-109)
+  �E���ߖ@�i�ォ��4�i�ڑ�`�j: �t�ϊ��A�O���b�h�����̗֊s�ɍ��킹�āAEnter�Ŏ��s
+  �E�؂蔲���i�ォ��3�i�ډE����2�Ԗڂ̃J�b�^�[�j�AEnter�Ŏ��s
+  �EExportAs �ŏ����o���ďo���オ��
 
 
-・Scrpt-Fu>Whiteboard Sharpner の処理内容
-＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+�EScrpt-Fu>Whiteboard Sharpner �̏������e
+����������������������������������������
 
-・レイヤー＞レイヤーをコピー
-・フィルタ＞ぼかし＞ガウシアンぼかし200x200
-・レイヤーモードを除算
-・レイヤー＞画像の統合（レイヤー）
+�E���C���[�����C���[���R�s�[
+�E�t�B���^���ڂ������K�E�V�A���ڂ���200x200
+�E���C���[���[�h�����Z
+�E���C���[���摜�̓����i���C���[�j
 
-・ツール＞強調＞アンシャープマスク 半径4 量1.4 閾値 8
-＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-以上
+�E�c�[�����������A���V���[�v�}�X�N ���a4 ��1.4 臒l 8
+����������������������������������������
+�ȏ�
