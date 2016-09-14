@@ -36,7 +36,7 @@
 (script-fu-register "white-board-sharp"
 		    "<Image>/Script-Fu/White Board Sharpner..."
   "Make background white and extra contrast for drawings."
-  "Haruyasu Ueda <hal_ueda@jp.fujitsu.com>"
+  "Haruyasu Ueda <MAE03130@nifty.com>"
   "Haruyasu Ueda"
   "2014"
   "RGB*"
