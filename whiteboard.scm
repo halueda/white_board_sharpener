@@ -25,6 +25,25 @@
     ;;・ツール＞強調＞アンシャープマスク 半径4 量1.4 閾値 8
     (plug-in-unsharp-mask 1 img using_layer 4 1.4 8)
 
+    ;; フィルタ＞変形＞レンズ補正 
+;;    (plug-in-lens-distortion run-mode/INT32
+;;			     image/IMAGE
+;;			     drawable
+;;			     offset-x/FLOAT
+;;			     offset-y/FLOAT
+;;			     main-adjust/FLOAT
+;;			     edge-adjust/FLOAT
+;;			     resacale/FLOAT
+    ;;			     brighten/FLOAT)
+    (plug-in-lens-distortion 1             ;;  run-mode/INT32 non-interactive =1
+			     img           ;;  image
+			     using_layer   ;;  drawable                      
+			     0.0	   ;;  offset-x/FLOAT                
+			     0.0	   ;;  offset-y/FLOAT                
+			     -5.0	   ;;  main-adjust/FLOAT             
+			     0.0	   ;;  edge-adjust/FLOAT             
+			     0.0	   ;;  resacale/FLOAT 
+			     0.0)	   ;;  brighten/FLOAT)
     ;;・色＞明るさ-コントラストで、背景が荒れない程度にコントラストを極大・背景を白くつぶす
     ;; これは必要なら手動で。なくても十分OK
 
