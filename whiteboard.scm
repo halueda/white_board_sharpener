@@ -1,11 +1,13 @@
 ;;; ホワイトボードの背景を白に統一
-;;; Time-stamp: <2014-08-18 18:02:34 ueda3>
-;;; Author: Haruyasu Ueda <hal_ueda@jp.fujitsu.com>
+;;; https://github.com/halueda/white_board_sharpener
+;;; 
+;;; Author: Haruyasu Ueda <MAE03130@nifty.com>
 ;;; Version 0.01
 
 (define (white-board-sharp img layer)
   (let ((using_layer nil))
-    (gimp-image-undo-disable img)
+;    (gimp-image-undo-disable img)
+    (gimp-image-undo-group-start img)
 
     ;;・レイヤー＞レイヤーをコピー
     (set! using_layer (car (gimp-layer-copy layer 1)))
@@ -27,7 +29,8 @@
     ;;・色＞明るさ-コントラストで、背景が荒れない程度にコントラストを極大・背景を白くつぶす
     ;; これは必要なら手動で。なくても十分OK
 
-    (gimp-image-undo-enable img)
+;    (gimp-image-undo-enable img)
+    (gimp-image-undo-group-end img)
     (gimp-displays-flush)
     )
 )
