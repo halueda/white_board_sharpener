@@ -24,7 +24,7 @@
     ;;
     ;;・ツール＞強調＞アンシャープマスク 半径4 量1.4 閾値 8
     (plug-in-unsharp-mask 1 img using_layer 4 1.4 8)
-
+    
     ;; フィルタ＞変形＞レンズ補正 
 ;;    (plug-in-lens-distortion run-mode/INT32
 ;;			     image/IMAGE
@@ -44,25 +44,15 @@
 			     0.0	   ;;  edge-adjust/FLOAT             
 			     0.0	   ;;  resacale/FLOAT 
 			     0.0)	   ;;  brighten/FLOAT)
-    ;;・色＞明るさ-コントラストで、背景が荒れない程度にコントラストを極大・背景を白くつぶす
-    ;; これは必要なら手動で。なくても十分OK
-
     (gimp-image-undo-group-end img)
+
+    ;;・色＞明るさ-コントラストで、背景が荒れない程度にコントラストを極大・背景を白くつぶす
+    ;; これは必要なら手動で。なくても十分OK。ここだけundoで戻せるようにする。
+    (gimp-brightness-contrast using_layer
+			      -120 ;; inBrightness/INT
+			      127 ;; inContrast/INT
+			      )
+
     (gimp-displays-flush)
     )
-)
-
-(script-fu-register "white-board-sharp"
-		    "<Image>/Script-Fu/White Board Sharpner..."
-  "Make background white and extra contrast for drawings."
-  "Haruyasu Ueda <MAE03130@nifty.com>"
-  "Haruyasu Ueda"
-  "2014"
-  "RGB*"
-;  ""
-  SF-IMAGE      "Image"             0
-  SF-DRAWABLE   "Drawable to apply" 0
-  ;SF-ADJUSTMENT _"Mask size"        '(5 1 100 1 1 0 1)
-  ;SF-ADJUSTMENT _"Mask opacity"     '(50 0 100 1 1 0 1)
-  ;  SF-ADJUSTMENT COMMENT     '(default min max step_s step_l float_accur slider0_or_text1)
 )
