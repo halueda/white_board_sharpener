@@ -2,7 +2,7 @@
 ;;; https://github.com/halueda/white_board_sharpener
 ;;; 
 ;;; Author: Haruyasu Ueda <MAE03130@nifty.com>
-;;; Version 0.01
+;;; Version 0.10
 
 (define (white-board-sharp img layer)
   (let ((using_layer nil))
@@ -55,4 +55,19 @@
 
     (gimp-displays-flush)
     )
+)
+
+(script-fu-register "white-board-sharp"
+		    "<Image>/Script-Fu/White Board Sharpner..."
+  "Make background white and extra contrast for drawings."
+  "Haruyasu Ueda <MAE03130@nifty.com>"
+  "Haruyasu Ueda"
+  "2014"
+  "RGB*"
+;  ""
+  SF-IMAGE      "Image"             0
+  SF-DRAWABLE   "Drawable to apply" 0
+  ;SF-ADJUSTMENT _"Mask size"        '(5 1 100 1 1 0 1)
+  ;SF-ADJUSTMENT _"Mask opacity"     '(50 0 100 1 1 0 1)
+  ;  SF-ADJUSTMENT COMMENT     '(default min max step_s step_l float_accur slider0_or_text1)
 )
