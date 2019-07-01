@@ -7,7 +7,8 @@ gimp 2.6.11でホワイトボードの写真をきれいにする手順
 
   ・gimp を一度実行する
     一度gimpを実行すると $HOME\.gimp-2.Xができる
-    通常、 C:\Users\ユーザー名\.ginm-2.X にできる
+    全ユーザ用にインストールすると、 C:\Users\ユーザー名\.ginm-2.X にできる
+    一人用にインストールすると、     C:\Users\ユーザ名\AppData\Roaming\GIMP\2.10\scripts
 
   ・whiteboard.scmをコピーする
     コピー先は、 $HOME\.gimp-2.X\scripts\whiteboard.scm 
